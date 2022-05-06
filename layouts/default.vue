@@ -57,14 +57,21 @@
       </v-list>
     </v-navigation-drawer>
     <v-footer :absolute="!fixed" app>
+      <Footer />
+
       <span>&copy; {{ new Date().getFullYear() }}</span>
     </v-footer>
   </v-app>
 </template>
 
 <script>
+import Footer from '@/components/Footer.vue'
+
 export default {
   name: 'DefaultLayout',
+  components: {
+    Footer,
+  },
   data() {
     return {
       clipped: false,
