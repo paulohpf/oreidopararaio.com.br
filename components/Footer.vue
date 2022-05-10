@@ -1,73 +1,65 @@
 <template>
-  <v-footer color="#df9405" :absolute="true" app>
-    <v-row class="footer ma-0" justify="space-between">
-      <v-col
-        :cols="isMobile ? 12 : 4"
-        class="contact d-flex justify-center align-center"
-      >
-        <div class="d-flex flex-column">
-          <div class="title">
-            <span>Contato</span>
-          </div>
-
-          <div class="contact-item d-flex flex-column">
-            <span>Telefone</span>
-            <a href="tel:+5514998964464">(14) 99896-4464</a>
-          </div>
-          <div class="contact-item d-flex flex-column">
-            <span>E-mail</span>
-            <a href="mailto:contato@oreidopararaio.com.br"
-              >contato@oreidopararaio.com.br</a
-            >
-          </div>
+  <v-footer color="#DDDDDD" class="pa-0 ma-0" :absolute="true" app>
+    <div class="footer d-flex flex-column">
+      <div class="d-flex justify-center">
+        <div class="title py-2">
+          <span>Contato</span>
         </div>
-      </v-col>
-
-      <v-col
-        :cols="isMobile ? 12 : 4"
-        class="copyright d-flex justify-center align-center"
-      >
+      </div>
+      <v-row class="footer pa-4" justify="space-between">
+        <v-col :cols="isMobile ? 12 : 6" class="justify-center align-center">
+          <ContactForm />
+        </v-col>
+        <v-col :cols="isMobile ? 12 : 6" class="contact d-flex justify-center">
+          <div class="d-flex flex-column">
+            <div class="contact-item d-flex flex-column">
+              <span>Telefone</span>
+              <a href="tel:+5514998964464">(14) 99896-4464</a>
+            </div>
+            <div class="contact-item d-flex flex-column">
+              <span>E-mail</span>
+              <a href="mailto:contato@oreidopararaio.com.br"
+                >contato@oreidopararaio.com.br</a
+              >
+            </div>
+            <div class="contact-item social d-flex flex-column">
+              <span>Social</span>
+              <div class="d-flex flex-row">
+                <a
+                  class="social-link"
+                  href="https://www.facebook.com/oreidopararaio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook color="rgba(0,0,0,.87)" />
+                </a>
+                <a
+                  class="social-link"
+                  href="https://www.instagram.com/oreidopararaio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram color="rgba(0,0,0,.87)" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </v-col>
+      </v-row>
+      <div class="copyright d-flex justify-center align-center pa-4">
         <span>O Rei do Pararaio &copy; {{ new Date().getFullYear() }}</span>
-      </v-col>
-
-      <v-col
-        :cols="isMobile ? 12 : 4"
-        class="social d-flex justify-center align-center"
-      >
-        <a
-          class="social-link"
-          href="https://www.facebook.com/oreidopararaio"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Facebook color="#fff" />
-        </a>
-        <a
-          class="social-link"
-          href="https://www.instagram.com/oreidopararaio/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Instagram color="#fff" />
-        </a>
-      </v-col>
-    </v-row>
+      </div>
+    </div>
   </v-footer>
 </template>
 
 <script>
-// import Logo from '@/components/LogoFooter.vue'
-import Facebook from '@/assets/images/footer/social/Facebook.vue'
-import Instagram from '@/assets/images/footer/social/Instagram.vue'
-// import YouTube from '@/assets/images/footer/social/YouTube.vue'
-
 export default {
   name: 'DefaultFooter',
   components: {
-    // Logo,
-    Facebook,
-    Instagram,
-    // YouTube,
+    ContactForm: () => import('@/components/ContactForm.vue'),
+    Facebook: () => import('@/assets/images/footer/social/Facebook.vue'),
+    Instagram: () => import('@/assets/images/footer/social/Instagram.vue'),
   },
   computed: {
     isMobile() {
@@ -79,40 +71,42 @@ export default {
 
 <style lang="sass" scoped>
 .footer
-  font-family: 'Open Sans', sans-serif
+  width: 100%
   display: flex
   justify-content: space-around
-  padding: 18px 0
-  color: #fff
+  font-family: 'Open Sans', sans-serif
+  // color: rgba(0,0,0,.87)
 
-  .social
-    .social-link:not(:last-child)
-      padding-right: 16px
+  .title
+    color: #de9408
+    font-weight: bold
+    span
+      display: block
+      padding-bottom: 6px
+      text-transform: uppercase
+
+    &:after
+      content: ''
+      display: block
+      // width: 100%
+      height: 2px
+      border-bottom: 1px solid #de9408
 
   .copyright
+    background-color: #de9408
     font-size: 12px
+    text-transform: uppercase
 
   //Area de contato
   .contact
-    .title
-      font-weight: bold
-
-      span
-        display: block
-        padding-bottom: 6px
-        text-transform: uppercase
-
-      &:after
-          content: ''
-          display: block
-          width: 100%
-          height: 1px
-          border-bottom: 1px solid #fff
+    .social
+      .social-link:not(:last-child)
+        padding-right: 16px
 
     //Item de contato
     .contact-item
       margin: 8px
-      color: #fff
+      color: #de9408
 
       span
         font-size: 0.8em
@@ -121,9 +115,8 @@ export default {
         text-transform: uppercase
 
       a
-        color: #fff
+        color: rgba(0,0,0,.87)
         text-decoration: none
-
 </style>
 
 

@@ -24,7 +24,9 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: [
+    '~/assets/css/global.scss'
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [],
@@ -62,8 +64,13 @@ export default {
       }
     },
     theme: {
-      dark: true,
+      dark: false,
       themes: {
+        light: {
+          primary: '#de9408',
+          secondary: '#1e1e1e',
+          accent: '#707276',
+        },
         dark: {
           primary: colors.blue.darken2,
           accent: colors.grey.darken3,
