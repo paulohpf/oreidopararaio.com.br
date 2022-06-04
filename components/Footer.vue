@@ -46,7 +46,7 @@
           </div>
         </v-col>
       </v-row>
-      <div class="copyright d-flex justify-center align-center pa-4">
+      <div class="copyright d-flex justify-center align-center pa-4 white--text">
         <span>O Rei do Pararaio &copy; {{ new Date().getFullYear() }}</span>
       </div>
     </div>
@@ -79,8 +79,8 @@ export default {
 
   .title
     color: #de9408
-    font-weight: bold
     span
+      font-weight: bold
       display: block
       padding-bottom: 6px
       text-transform: uppercase

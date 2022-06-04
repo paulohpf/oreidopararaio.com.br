@@ -5,7 +5,7 @@
       <v-text-field label="Nome" name="name" />
       <v-text-field label="E-mail" name="email" />
       <v-text-field label="Telefone" name="phone" />
-      <v-textarea label="Mensagem" name="message" />
+      <v-textarea label="Mensagem" name="message" no-resize />
       <v-btn class="white--text" type="submit" color="#de9408">Enviar</v-btn>
     </form>
   </div>
