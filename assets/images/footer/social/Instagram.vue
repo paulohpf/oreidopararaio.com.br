@@ -1,5 +1,5 @@
 <template>
-  <div class="instagrambrand" :style="{width: width, height: height}">
+  <div class="instagrambrand" :style="{ width: width, height: height }">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
       <!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
       <path
@@ -18,14 +18,14 @@ export default {
       type: String,
       default: '#707276',
     },
-    width:  {
+    width: {
       type: String,
       default: '40px',
     },
-    height:  {
+    height: {
       type: String,
       default: '40px',
-    }
+    },
   },
 }
 </script>

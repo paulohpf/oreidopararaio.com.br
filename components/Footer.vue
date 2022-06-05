@@ -41,12 +41,22 @@
                 >
                   <Instagram color="rgba(0,0,0,.87)" />
                 </a>
+                <a
+                  class="social-link"
+                  :href="whatsAppLink"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <WhatsApp color="rgba(0,0,0,.87)" />
+                </a>
               </div>
             </div>
           </div>
         </v-col>
       </v-row>
-      <div class="copyright d-flex justify-center align-center pa-4 white--text">
+      <div
+        class="copyright d-flex justify-center align-center pa-4 white--text"
+      >
         <span>O Rei do Pararaio &copy; {{ new Date().getFullYear() }}</span>
       </div>
     </div>
@@ -60,10 +70,20 @@ export default {
     ContactForm: () => import('@/components/ContactForm.vue'),
     Facebook: () => import('@/assets/images/footer/social/Facebook.vue'),
     Instagram: () => import('@/assets/images/footer/social/Instagram.vue'),
+    WhatsApp: () => import('@/assets/images/footer/social/WhatsApp.vue'),
   },
+  data: () => ({
+    whatsapp: {
+      phone: '5514998964464',
+      message: 'Olá, encontrei seu site e gostaria de tirar algumas dúvidas!',
+    },
+  }),
   computed: {
     isMobile() {
       return this.$vuetify.breakpoint.mobile
+    },
+    whatsAppLink() {
+      return `https://api.whatsapp.com/send?phone=${this.whatsapp.phone}&text=${this.whatsapp.message}`
     },
   },
 }
