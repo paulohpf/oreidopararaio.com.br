@@ -6,7 +6,7 @@
           <span>Contato</span>
         </div>
       </div>
-      <v-row class="footer pa-4" justify="space-between">
+      <v-row class="footer pa-0 ma-0" justify="space-between">
         <v-col :cols="isMobile ? 12 : 6" class="justify-center align-center">
           <ContactForm />
         </v-col>
