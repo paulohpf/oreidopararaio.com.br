@@ -32,14 +32,53 @@
         </div>
       </div>
 
-      <v-row>
+      <v-carousel v-if="$vuetify.breakpoint.mobile" cycle height="auto">
+        <v-carousel-item v-for="(service, index) in services" :key="index">
+          <div
+            class="
+              service
+              d-flex
+              flex-column
+              text-center
+              align-center
+              justify-start
+              mb-6
+              pb-6
+            "
+          >
+            <v-img
+              class="ma-2"
+              :src="service.image"
+              max-width="64"
+              max-height="64"
+              contain
+            />
+            <span class="pa-2">{{ service.title }}</span>
+          </div>
+        </v-carousel-item>
+      </v-carousel>
+
+      <v-row v-if="!$vuetify.breakpoint.mobile">
         <v-col
           v-for="(service, index) in services"
           :key="index"
-          class="service d-flex flex-column text-center align-center justify-start"
+          class="
+            service
+            d-flex
+            flex-column
+            text-center
+            align-center
+            justify-start
+          "
           cols="4"
         >
-          <v-img class="ma-2" :src="service.image" max-width="64" max-height="64" contain />
+          <v-img
+            class="ma-2"
+            :src="service.image"
+            max-width="64"
+            max-height="64"
+            contain
+          />
           <span class="pa-2">{{ service.title }}</span>
         </v-col>
       </v-row>
