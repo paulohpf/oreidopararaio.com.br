@@ -32,16 +32,17 @@
         </div>
       </div>
 
-      <ul class="explained">
-        <li
+      <v-row>
+        <v-col
           v-for="(service, index) in services"
           :key="index"
-          class="service"
+          class="service d-flex flex-column text-center align-center justify-start"
           cols="4"
         >
-          {{ service.title }}
-        </li>
-      </ul>
+          <v-img class="ma-2" :src="service.image" max-width="64" max-height="64" contain />
+          <span class="pa-2">{{ service.title }}</span>
+        </v-col>
+      </v-row>
     </Section>
   </div>
 </template>
@@ -54,12 +55,30 @@ export default {
   },
   data: () => ({
     services: [
-      { title: 'Projetos de SPDA' },
-      { title: 'Gerenciamento de risco conforme NBR 5419-2/2015;' },
-      { title: 'Medidas de proteção contra surtos elétricos (MPS)' },
-      { title: 'Sistema de Aterramento residencial, comercial e industrial' },
-      { title: 'Laudos técnicos e inspeções' },
-      { title: 'Testes e medições de resistividade' },
+      {
+        title: 'Projetos de SPDA',
+        image: require('@/assets/images/services/project.png'),
+      },
+      {
+        title: 'Gerenciamento de risco conforme NBR 5419-2/2015',
+        image: require('@/assets/images/services/briefing.png'),
+      },
+      {
+        title: 'Medidas de proteção contra surtos elétricos (MPS)',
+        image: require('@/assets/images/services/electric-meter.png'),
+      },
+      {
+        title: 'Sistema de Aterramento residencial, comercial e industrial',
+        image: require('@/assets/images/services/symbol.png'),
+      },
+      {
+        title: 'Laudos técnicos e inspeções',
+        image: require('@/assets/images/services/report.png'),
+      },
+      {
+        title: 'Testes e medições de resistividade',
+        image: require('@/assets/images/services/checklist.png'),
+      },
     ],
   }),
   computed: {
