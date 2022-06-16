@@ -32,7 +32,7 @@
         </div>
       </div>
 
-      <v-carousel v-if="$vuetify.breakpoint.mobile" cycle height="auto">
+      <v-carousel v-show="$vuetify.breakpoint.mobile" cycle height="auto">
         <v-carousel-item v-for="(service, index) in services" :key="index">
           <div
             class="
@@ -58,7 +58,7 @@
         </v-carousel-item>
       </v-carousel>
 
-      <v-row v-if="!$vuetify.breakpoint.mobile">
+      <v-row v-show="!$vuetify.breakpoint.mobile">
         <v-col
           v-for="(service, index) in services"
           :key="index"
