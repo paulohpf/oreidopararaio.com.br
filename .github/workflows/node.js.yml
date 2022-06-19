@@ -28,7 +28,7 @@ jobs:
         host: ${{ secrets.FTP_SERVER_DEV }}
         user: ${{ secrets.FTP_USERNAME_DEV }}
         password: ${{ secrets.FTP_PASSWORD_DEV }}
-        localDir: "dist"
-        remoteDir: "./"
+        localDir: "dist/."
+        remoteDir: "/home1/oreido38/oreidopararaio.com.br/dev.oreidopararaio.com.br"
         options: "--delete --asci"
   
