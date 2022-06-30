@@ -19,9 +19,11 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - run: npm install
-    - run: npm run generate --if-present
-    - run: npm run build --if-present
+    - name: Install Yarn
+      run: npm install -g yarn
+    - run: yarn install
+    - run: yarn run generate --if-present
+    - run: yarn run build --if-present
     - name: deploy to DEV
       uses: sebastianpopp/ftp-action@releases/v2
       with:
@@ -29,6 +31,6 @@ jobs:
         user: ${{ secrets.FTP_USERNAME_DEV }}
         password: ${{ secrets.FTP_PASSWORD_DEV }}
         localDir: "dist"
-        remoteDir: "."
+        remoteDir: "/dist/."
         options: "--delete --asci"
   
